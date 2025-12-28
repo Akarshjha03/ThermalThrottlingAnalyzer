@@ -40,7 +40,7 @@ var watchCmd = &cobra.Command{
 		ticker := time.NewTicker(analyzer.SampleInterval) // 2s
 		defer ticker.Stop()
 
-		lastState := analyzer.StateNormal
+		var lastState analyzer.State
 		demoCounter := 0
 
 		// External process for animation

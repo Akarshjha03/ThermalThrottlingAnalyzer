@@ -7,11 +7,30 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const (
+	LightBlue = "\033[34m"
+	Red       = "\033[31m"
+	Reset     = "\033[0m"
+)
+
 var rootCmd = &cobra.Command{
 	Use:   "tta",
 	Short: "Thermal Throttling Analyzer",
 	Long:  `A Windows-only CLI diagnostic tool in Go that detects, analyzes, and explains CPU thermal throttling.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		const banner = `
+		
+████████╗██╗  ██╗███████╗██████╗ ███╗   ███╗ █████╗ ██╗  ████████╗ █████╗ 
+╚══██╔══╝██║  ██║██╔════╝██╔══██╗████╗ ████║██╔══██╗██║  ╚══██╔══╝██╔══██╗
+   ██║   ███████║█████╗  ██████╔╝██╔████╔██║███████║██║     ██║   ███████║
+   ██║   ██╔══██║██╔══╝  ██╔══██╗██║╚██╔╝██║██╔══██║██║     ██║   ██╔══██║
+   ██║   ██║  ██║███████╗██║  ██║██║ ╚═╝ ██║██║  ██║███████╗██║   ██║  ██║
+   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝   ╚═╝  ╚═╝                                                                    
+                                                                                                                                                    
+`
+		fmt.Println(Red + banner + Reset)
+		fmt.Println("Thermal Throttling Analyzer (TTA) - v1.2.0")
+		fmt.Println("-------------------------------------------")
 		cmd.Help()
 	},
 }
@@ -24,5 +43,5 @@ func Execute() {
 }
 
 func matchRun() {
-    Execute()
+	Execute()
 }

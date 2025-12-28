@@ -67,38 +67,47 @@ go install github.com/Akarshjha03/ThermalThrottlingAnalyzer/cmd/tta@latest
 
 ## 🛠️ Commands
 
-### 1. Check System Status
+### 1. View Available Commands
+Run the root command to see the ASCII banner and list of all supported commands.
+```bash
+tta
+```
+*Output: Displays a custom ASCII banner followed by the help menu.*
+
+### 2. Check System Status
 Quickly verify if your system is currently throttling or healthy.
 ```bash
 tta status
 ```
 *Output: "Thermal State: NORMAL" or "Thermal State: THROTTLING"*
 
-### 2. Live Monitoring
-Watch your CPU metrics update in real-time. perfect for keeping open on a second monitor while testing.
+### 3. Live Monitoring
+Watch your CPU metrics update in real-time with a fire animation when throttling occurs.
 ```bash
 tta watch
 ```
 
-### 3. Analyze History
+### 4. Analyze History
 Investigate what happened in the last few hours.
 ```bash
 tta analyze --last 2h
 ```
 
-### 4. Health Check (Doctor)
+### 5. Health Check (Doctor)
 Run a comprehensive diagnostic of your thermal sensors and configuration.
 ```bash
 tta doctor
 ```
 
-### 5. View Logs
+### 6. View Logs
 Dump raw event logs for external processing.
 ```bash
 tta log --today
 ```
 
----
+### 7. Other Commands
+*   `tta completion`: Generate the autocompletion script for the specified shell.
+*   `tta help`: Help about any command.
 
 ## 🤝 Contributions
 
@@ -114,12 +123,6 @@ Please ensure you run `go fmt ./...` before submitting!
 
 ---
 
-## ⭐ Support
-
-If you find this project useful, please consider **leaving a star** on GitHub! It helps us know you appreciate the work and motivaes further development.
-
 ## 🙏 Acknowledgments
 
 -   **ANSI Fire Animation**: Inspired by and adapted from [gh-yule-log](https://github.com/leereilly/gh-yule-log) by Lee Reilly.
-
-Made with ❤️ in Go.
